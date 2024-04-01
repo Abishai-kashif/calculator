@@ -40,7 +40,7 @@ else if (answers.operation === "Division") {
     console.log(`${chalk.blue(`The quotient of ${answers.num1} and ${answers.num2} is :`)} ${chalk.yellowBright(answers.num1 / answers.num2)}`);
 }
 else if (answers.operation === "Exponent") {
-    console.log(`${chalk.blue(`The square of ${answers.num1} and ${answers.num2} is :`)} ${chalk.yellowBright(answers.num1 ** answers.num2)}`);
+    console.log(`${chalk.blue(`The Exponent of ${answers.num1} and ${answers.num2} is :`)} ${chalk.yellowBright(answers.num1 ** answers.num2)}`);
 }
 else if (answers.operation === "Modulus") {
     console.log(`${chalk.blue(`The remainder of ${answers.num1} and ${answers.num2} is :`)} ${chalk.yellowBright(answers.num1 % answers.num2)}`);

@@ -106,12 +106,14 @@ if (modes.mode === "Calculate-Percentage Mode") {
         //printing percentage
         console.log(`${chalk.blue(`The percentage of ${answers.obtained} out of ${answers.total} is :`)} ${chalk.yellowBright(percentage)}${chalk.yellowBright("%")}`);
 
+        console.log();//printing new line
+        
         //asking user if he wana get result
         let checks = await inquirer.prompt([
             {
                 name: "check",
                 type: "confirm",
-                message: chalk.yellow("\nWould you like to check your result?"),
+                message: chalk.yellow("Would you like to check your result?"),
                 default: true
             }
         ]);

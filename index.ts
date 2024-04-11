@@ -13,14 +13,15 @@ console.log(`\t   ${chalk.red("<")}${chalk.blue("==========")}${chalk.red(">")} 
 console.log(chalk.blue("\t\t\t------------------------\n\n"));
 
 
-// Asking user to select mode
+
+    // Asking user to select mode
 let modes = await inquirer.prompt(
     {
         name : "mode",
         type : "list",
         message : chalk.yellow.bold("Select the Mode"),
-        choices : ["Calculate-Percentage Mode" ,
-                    "Calculate-Numbers Mode"],
+        choices : ["Calculate-Numbers Mode",
+                    "Calculate-Percentage Mode"]
     }
 );
 
@@ -42,12 +43,12 @@ if (modes.mode === "Calculate-Numbers Mode") {
         {
             name: "num1",
             type: "number",
-            message: chalk.yellow("Kindly enter your first number:")
+            message: chalk.yellow("Kindly enter your first number:"),
         },
         {
             name: "num2",
             type: "number",
-            message: chalk.yellow("Kindly enter your second number:")
+            message: chalk.yellow("Kindly enter your second number:"),
         },
         {
             name: "operation",
@@ -87,6 +88,7 @@ if (modes.mode === "Calculate-Percentage Mode") {
             name: "total",
             type: "number",                 
             message: chalk.yellow("Kindly enter your total marks:")
+            
         },
         {
             name: "obtained",
@@ -108,14 +110,14 @@ if (modes.mode === "Calculate-Percentage Mode") {
         let checks = await inquirer.prompt([
             {
                 name: "check",
-                type: "list",
+                type: "confirm",
                 message: chalk.yellow("\nWould you like to check your result?"),
-                choices: ["Yes", "No"]
+                default: true
             }
         ]);
 
         //print if user is passed or failed
-        if (checks.check === "Yes") {
+        if (checks.check) {
             if (percentage >= 33) {
                 console.log(chalk.greenBright("Congratulations !! You have passed the exam\n"));
             } else {
@@ -128,14 +130,14 @@ if (modes.mode === "Calculate-Percentage Mode") {
         let grades = await inquirer.prompt([
             {
                 name: "grade",
-                type: "list",
+                type: "confirm",
                 message: chalk.yellow("Would you like to check your Grade?"),
-                choices: ["Yes", "No"]
+                default: true
             }
             ]);
         
             //print grade
-        if (grades.grade === "Yes") {
+        if (grades.grade) {
             calGrade(percentage); //calling grade function
         };
 

@@ -1,6 +1,6 @@
 {
   "name": "project_calculator_by_abishai",
-  "version": "3.0.1",
+  "version": "3.1.1",
   "description": "simple calculator",
   "main": "index.js",
   "type": "module",

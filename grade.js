@@ -1,4 +1,4 @@
-//this module is for calculating the grade
+// Making function for grading using modular approach
 import chalk from "chalk";
 //making function for grading
 const calGrade = (percentage) => {
